@@ -62,17 +62,61 @@ function getScore() {
 console.log(getScore());
 
 // Q-2
-for (let i = 0; i < 5; i++) {
-  setTimeout(function () {
-    console.log(i);
-  }, i * 1000);
-}
+// for (let i = 0; i < 5; i++) {
+//   setTimeout(function () {
+//     console.log(i);
+//   }, i * 1000);
+// }
 // 0, 1, 2, 3, 4
 
-for (var i = 0; i < 5; i++) {
-  setTimeout(function () {
-    console.log(i);
-  }, i * 1000);
-}
+// for (var i = 0; i < 5; i++) {
+//   setTimeout(function () {
+//     console.log(i);
+//   }, i * 1000);
+// }
 
 // 5, 5, 5, 5, 5
+
+// Question 5 : Function Hoisting
+
+// Without Hoisting:
+function functionName() {
+  console.log("Work at tech");
+}
+functionName();
+
+// Output based question
+var x = 21;
+var fun = function () {
+  // init
+  // execute
+  console.log(x);
+  var x = 20;
+};
+// ans: undefined
+fun();
+
+// Question 6 :  Params vs arguments
+
+function squareFive(num) {
+  // params
+  return num * num;
+}
+squareFive(5); //arguments
+
+// spread vs rest operators
+
+function multiply(num1, num2) {
+  console.log(num1 * num2);
+}
+
+var arrMulOne = [5, 2];
+multiply(...arrMulOne); // spread operator
+
+function multi(...nums) {
+  // in params its called rest operator
+  console.log(nums);
+}
+
+var arrMulTwo = [7, 2];
+multi(...arrMulTwo);
