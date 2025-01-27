@@ -2,7 +2,8 @@
 // scope
 
 // without any block every thing is a global scope
-var a = 5;
+// var a = 5;
+
 /* 
     var is function-scoped, meaning:
 
@@ -27,14 +28,14 @@ var a = 5;
 
 //  Variable Shadowing
 function test() {
-  var a = "Hello";
+  var aTest = "Hello";
   //   let b = "Bye";
   if (true) {
-    let a = "Hi";
+    let aTest = "Hi";
     // var b = "Goodbye";
-    console.log(a);
+    console.log(aTest);
   }
-  console.log(a);
+  console.log(aTest);
 }
 test();
 
@@ -60,8 +61,11 @@ test();
 
 // Declaration without initialisation
 
-var a;
-let b;
+/* 
+    var a;
+    let b;
+*/
+
 // Can't Declaration without initialisation
 // const c;
 
@@ -78,3 +82,39 @@ a = 6;
 
 // const b = 5;
 // b = 6;
+
+// JavaScript execution context have two phases
+/*
+    1. creation phase
+    first, create global or a window object
+    second, setup a memory heap, to store variable, and function references 
+    third, var and all the Declaration as an undefined
+*/
+
+/* 
+    2. execution phase
+*/
+
+// Hoisting
+var count;
+console.log(count);
+count = 1;
+
+function abc1() {
+  console.log(a);
+  var a = 10;
+}
+abc1();
+// ans: Undefined
+
+function abc2() {
+  console.log(a, b, c);
+
+  const c = 30;
+  let b = 20;
+  var a = 10;
+}
+abc2();
+
+//  b and c hoisted, but in a the
+// The temporal dead zone (TDZ) in JavaScript is the period when a variable is declared but not yet initialized.
