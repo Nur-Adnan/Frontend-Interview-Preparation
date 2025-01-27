@@ -139,10 +139,38 @@ function processUserInput(callback) {
   callback(name);
 }
 
-
 // Question 9 : Arrow functions
 
 const add = (firstNum, secondNum) => {
   return firstNum + secondNum;
 };
 
+const addNum = (firstNum, secondNum) => firstNum + secondNum;
+
+// Diff between arrow and normal functions are -> syntax, implicit return keyword, and arguments
+
+function fnOne() {
+  console.log(arguments);
+}
+fnOne(1, 2, 3);
+
+// const fnArr = () => {
+//   console.log(arguments);
+// };
+// could not do in the arrow function
+// fnArr(1, 2, 3);
+
+// Question 10 : this
+
+let user = {
+  nameS: "Nur Adnan",
+  c1: () => {
+    console.log("Hi " + this.nameS);
+    // it's try to first found from the global scope
+  },
+  c2() {
+    console.log("Hi " + this.nameS);
+  },
+};
+user.c1();
+user.c2();
