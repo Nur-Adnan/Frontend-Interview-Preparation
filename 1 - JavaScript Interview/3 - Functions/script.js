@@ -37,3 +37,26 @@ displaySquare(squareThree);
     console.log(x);
   })(2);
 })(1);
+
+// Question 4 : Function Scope
+
+// Q-1
+var num1 = 20,
+  num2 = 3,
+  name = "Nur Adnan";
+
+function mul() {
+  return num1 * num2;
+}
+console.log(mul());
+
+function getScore() {
+  var num1 = 3,
+    num2 = 4;
+  function add() {
+    return name + " scored " + (num1 + num2);
+  }
+  return add();
+}
+
+console.log(getScore());
