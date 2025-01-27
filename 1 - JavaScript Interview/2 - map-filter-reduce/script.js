@@ -51,3 +51,5 @@ const multiplyFour = numsFour.myMap((currentElement, index, arr) => {
   return currentElement * 4 + index;
 });
 console.log(multiplyThree);
+
+//  polyfill for filter()
