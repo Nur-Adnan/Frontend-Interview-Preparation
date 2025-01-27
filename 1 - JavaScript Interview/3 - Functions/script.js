@@ -138,3 +138,11 @@ function processUserInput(callback) {
   var name = prompt("Please enter your name.");
   callback(name);
 }
+
+
+// Question 9 : Arrow functions
+
+const add = (firstNum, secondNum) => {
+  return firstNum + secondNum;
+};
+
