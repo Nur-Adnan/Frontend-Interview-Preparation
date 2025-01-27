@@ -20,3 +20,10 @@ function displaySquare(fn) {
   console.log("Square is " + fn(5));
 }
 displaySquare(squareThree);
+
+// Functions in Js
+// What is IIFE
+
+(function squareFour(num) {
+  console.log(num * num);
+})(5);
