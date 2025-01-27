@@ -126,3 +126,15 @@ const fn = (a, x, y, ...numbers) => {
   console.log(x, y, numbers);
 };
 fn(5, 6, 3, 7, 8, 9);
+
+// Question 8 : Callback
+// setTimeout, addEventListner, map, filter, reduce
+
+function greeting(name) {
+  alert("Hello " + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt("Please enter your name.");
+  callback(name);
+}
