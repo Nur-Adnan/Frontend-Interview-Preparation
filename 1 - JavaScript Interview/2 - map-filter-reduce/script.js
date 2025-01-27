@@ -47,9 +47,26 @@ Array.prototype.myMap = function (callBack) {
 
 const numsFour = [1, 2, 3, 4];
 
-const multiplyFour = numsFour.myMap((currentElement, index, arr) => {
-  return currentElement * 4 + index;
+const multiplyThre = numsFour.myMap((currentElement, index, arr) => {
+  return currentElement * 3 + index;
 });
-console.log(multiplyThree);
+console.log(multiplyThre);
 
 //  polyfill for filter()
+
+Array.prototype.myFilter = function (callBack) {
+  let temp = [];
+  // here this is basically means the array
+  for (let i = 0; i < this.length; i++) {
+    // this[i] - is for retrive of data from the array
+    if (callBack(this[i], i, this)) temp.push(this[i]);
+  }
+  return temp;
+};
+
+const numsFive = [1, 2, 3, 4];
+
+const moreThanTw = numsFive.myFilter((num) => {
+  return num > 2;
+});
+console.log(moreThanTw);
