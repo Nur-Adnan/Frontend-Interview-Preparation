@@ -120,3 +120,9 @@ function multi(...nums) {
 
 var arrMulTwo = [7, 2];
 multi(...arrMulTwo);
+
+// if want to use rest or spread operator, then use it at the last
+const fn = (a, x, y, ...numbers) => {
+  console.log(x, y, numbers);
+};
+fn(5, 6, 3, 7, 8, 9);
