@@ -8,3 +8,7 @@ const multiplyThree = nums.map((currentElement, index, arr) => {
   return currentElement * 3 + index;
 });
 console.log(multiplyThree);
+
+// what is filter() ?
+// The filter() method creates a new array filled with elements that pass a test provided by a function.
+
