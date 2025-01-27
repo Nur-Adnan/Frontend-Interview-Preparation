@@ -27,3 +27,13 @@ displaySquare(squareThree);
 (function squareFour(num) {
   console.log(num * num);
 })(5);
+
+// Q5  - IIFE  - o/p based questions?
+(function (x) {
+  //  first search x into the inner scope, if doesn't found, then it search it to the outer scope
+  // This is going to happed because of closure
+  // A closure gives you access to an outer function’s scope from an inner function
+  return (function (y) {
+    console.log(x);
+  })(2);
+})(1);
