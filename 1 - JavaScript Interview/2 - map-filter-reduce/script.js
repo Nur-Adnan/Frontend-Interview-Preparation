@@ -33,3 +33,21 @@ const sum = numsThree.reduce((acc, curr, index, arr) => {
 console.log(sum);
 
 //  polyfill for map()
+//  Here the prototype is to do, added the myMap into the Array method
+
+// Array.map((num, i, arr) => {});
+Array.prototype.myMap = function (callBack) {
+  let temp = [];
+  // here this is basically means the array
+  for (let i = 0; i < this.length; i++) {
+    temp.push(callBack(this[i], i, this));
+  }
+  return temp;
+};
+
+const numsFour = [1, 2, 3, 4];
+
+const multiplyFour = numsFour.myMap((currentElement, index, arr) => {
+  return currentElement * 4 + index;
+});
+console.log(multiplyThree);
