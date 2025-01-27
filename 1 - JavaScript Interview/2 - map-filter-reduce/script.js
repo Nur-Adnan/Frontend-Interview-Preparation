@@ -31,3 +31,5 @@ const sum = numsThree.reduce((acc, curr, index, arr) => {
 }, 0);
 
 console.log(sum);
+
+//  polyfill for map()
