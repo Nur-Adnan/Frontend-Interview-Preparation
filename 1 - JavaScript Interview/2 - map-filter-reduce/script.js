@@ -70,3 +70,25 @@ const moreThanTw = numsFive.myFilter((num) => {
   return num > 2;
 });
 console.log(moreThanTw);
+
+//  polyfill for reduce()
+// arr.reduce((acc, curr, i, arr)=> {}, initial_value)
+Array.prototype.myReduce = function (callBack, initial_value) {
+  var accumulator = initial_value;
+  // here this is basically means the array
+  for (let i = 0; i < this.length; i++) {
+    accumulator = accumulator
+      ? callBack(accumulator, this[i], i, this)
+      : this[i];
+  }
+  return accumulator;
+};
+
+const numsSeven = [1, 2, 3, 4];
+const sums = numsSeven.myReduce((acc, curr, index, arr) => {
+  // accumulator is the result of the previous computation
+  // if there's no initial value, it takes first element of array as initial value for accumulator
+  return acc + curr;
+}, 0);
+
+console.log(sums);
